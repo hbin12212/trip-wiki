@@ -4,6 +4,7 @@ export default function Header({ $app, initialState, handleSortChange, handleSea
     this.$target.className = 'header';
 
     this.handleSortChange = handleSortChange;
+    this.handleSearch = handleSearch;
     $app.appendChild(this.$target);
 
     this.template = () => {
@@ -34,12 +35,12 @@ export default function Header({ $app, initialState, handleSortChange, handleSea
         this.$target.innerHTML = this.template();
         if (!this.state.currentPage.includes('/city/')) {
             document.getElementById('sortList').addEventListener('change', (event) => {
-                onChange(event.target.value);
+                this.handleSortChange(event.target.value);
             });
             const $searchInput = document.getElementById('search');
             $searchInput.addEventListener('keydown', (event) => {
                 if (event.key === 'Enter') {
-                    handleSearch($searchInput.value);
+                    this.handleSearch($searchInput.value);
                 }
             });
         }

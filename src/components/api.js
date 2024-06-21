@@ -1,7 +1,7 @@
 const API_URL = 'https://trip-wiki-api.vercel.app/';
 
 //LIST API
-export const request = async (startIdx, region, sortBy, searchData) => {
+export const request = async (startIdx, region, sortBy, searchWord) => {
     try {
         let url = `${API_URL}`;
         if (region && region !== 'All') {
@@ -12,8 +12,8 @@ export const request = async (startIdx, region, sortBy, searchData) => {
         if (sortBy) {
             url += `&sort=${sortBy}`;
         }
-        if (searchData) {
-            url += `&search=${searchData}`;
+        if (searchWord) {
+            url += `&search=${searchWord}`;
         }
         console.log(url);
         //API 호출

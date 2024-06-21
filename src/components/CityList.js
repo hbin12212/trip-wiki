@@ -29,7 +29,7 @@ export default function CityList({ $app, initialState, handleItemClick, handleLo
         this.$target.innerHTML = this.template();
         this.$target.querySelectorAll('.city-item').forEach((elm) => {
             elm.addEventListener('click', () => {
-                handleItemClick(elm.id);
+                this.handleItemClick(elm.id);
             });
         });
 
@@ -40,7 +40,7 @@ export default function CityList({ $app, initialState, handleItemClick, handleLo
             this.$target.appendChild($loadMoreButton);
 
             $loadMoreButton.addEventListener('click', () => {
-                handleLoadMore();
+                this.handleLoadMore();
             });
         }
     };
