@@ -118,7 +118,7 @@ a {
 
 .city-list .city-items-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Responsive grid */
     row-gap: 40px; /* 상하 여백 */
     column-gap: 60px; /* 좌우 여백 */
     color: var(--gray);
@@ -256,7 +256,6 @@ a {
     background-color: var(--red);
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
     .header {
         padding: 25px 5%;
@@ -270,18 +269,28 @@ a {
     .city-detail .percentage {
         padding: 0 5%;
         width: 90%;
+        padding-top: 60px;
+    }
+    .city-detail .label {
+        font-size: var(--medium);
+        flex: 0 0 170px;
+        text-align: left;
+    }
+    .city-list .city-items-container {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Responsive grid */
     }
 }
 
 @media (max-width: 768px) {
     .header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         gap: 10px;
     }
     .filter-search-container {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
         gap: 10px;
     }
     .header .title {
@@ -291,7 +300,7 @@ a {
         justify-content: center;
     }
     .city-detail .city-name {
-        top: 40%;
+        top: 50%;
     }
     .city-name .city {
         font-size: var(--xlarge);
@@ -299,22 +308,67 @@ a {
     .city-name .country {
         font-size: var(--large);
     }
+
     .city-detail .percentage {
         padding-top: 30px;
+        padding-bottom: 30px;
     }
-    .city-detail .info-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+
     .city-detail .label {
         font-size: var(--regular);
         text-align: left;
-        width: 100%;
+        margin-bottom: 5px;
+    }
+    .city-detail .info-item {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .city-detail .percent-bar {
+        position: relative;
+        flex: 1;
+        height: 32px;
+        background-color: var(--light-gray);
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .city-detail .percent-bar::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        border-radius: 20px;
+    }
+
+    .city-detail .percent-bar[data-score='green']::after {
+        min-width: 10px;
+        width: var(--score);
+        background-color: var(--green);
+    }
+
+    .city-detail .percent-bar[data-score='yellow']::after {
+        min-width: 10px;
+        width: var(--score);
+        background-color: var(--yellow);
+    }
+
+    .city-detail .percent-bar[data-score='red']::after {
+        min-width: 10px;
+        width: var(--score);
+        background-color: var(--red);
+    }
+
+    .city-list .city-items-container {
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); /* Responsive grid */
     }
 }
 
 @media (max-width: 480px) {
     .header {
+        flex-direction: column;
+        align-items: flex-start;
         padding: 15px 5%;
     }
     .header .title {
@@ -322,14 +376,5 @@ a {
     }
     .city-list .city-items-container {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-    .city-detail .image-banner {
-        height: 25%;
-    }
-    .city-name .city {
-        font-size: var(--large);
-    }
-    .city-name .country {
-        font-size: var(--medium);
     }
 }
