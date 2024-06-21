@@ -70,7 +70,7 @@ export default function App($app) {
         new RegionList({
             $app,
             initialState: this.state.region,
-            handleRegionClick: async (region) => {
+            handleRegion: async (region) => {
                 history.pushState(null, null, `/${region}?sort=total`);
                 const cities = await request(0, region, 'total');
                 this.setState({

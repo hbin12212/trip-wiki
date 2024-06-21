@@ -1,9 +1,9 @@
-export default function RegionList({ $app, initialState, handleRegionClick }) {
+export default function RegionList({ $app, initialState, handleRegion }) {
     this.state = initialState;
     this.$target = document.createElement('div');
     this.$target.className = 'region-list';
 
-    this.handleRegionClick = handleRegionClick;
+    this.handleRegion = handleRegion;
     $app.appendChild(this.$target);
 
     this.template = () => {
@@ -38,7 +38,7 @@ export default function RegionList({ $app, initialState, handleRegionClick }) {
         const $regionList = this.$target.querySelectorAll('div');
         $regionList.forEach((elm) => {
             elm.addEventListener('click', () => {
-                this.handleRegionClick(elm.id);
+                this.handleRegion(elm.id);
             });
         });
     };
