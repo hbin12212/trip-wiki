@@ -238,19 +238,19 @@ a {
     border-radius: 20px;
 }
 
-.city-detail .progress-bar[data-score='green']::after {
+.city-detail .progress-bar[score-color='green']::after {
     min-width: 10px;
     width: var(--score);
     background-color: var(--green);
 }
 
-.city-detail .progress-bar[data-score='yellow']::after {
+.city-detail .progress-bar[score-color='yellow']::after {
     min-width: 10px;
     width: var(--score);
     background-color: var(--yellow);
 }
 
-.city-detail .progress-bar[data-score='red']::after {
+.city-detail .progress-bar[score-color='red']::after {
     min-width: 10px;
     width: var(--score);
     background-color: var(--red);
@@ -342,19 +342,19 @@ a {
         border-radius: 20px;
     }
 
-    .city-detail .progress-bar[data-score='green']::after {
+    .city-detail .progress-bar[score-color='green']::after {
         min-width: 10px;
         width: var(--score);
         background-color: var(--green);
     }
 
-    .city-detail .progress-bar[data-score='yellow']::after {
+    .city-detail .progress-bar[score-color='yellow']::after {
         min-width: 10px;
         width: var(--score);
         background-color: var(--yellow);
     }
 
-    .city-detail .progress-bar[data-score='red']::after {
+    .city-detail .progress-bar[score-color='red']::after {
         min-width: 10px;
         width: var(--score);
         background-color: var(--red);
