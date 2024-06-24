@@ -201,7 +201,7 @@ a {
     font-size: var(--xlarge);
 }
 
-.city-detail .percentage {
+.city-detail .progress-container {
     padding: 0px 12%;
     width: 76%;
     padding-top: 60px;
@@ -220,7 +220,7 @@ a {
     text-align: left;
 }
 
-.city-detail .percent-bar {
+.city-detail .progress-bar {
     position: relative;
     flex: 1;
     height: 32px;
@@ -229,7 +229,7 @@ a {
     overflow: hidden;
 }
 
-.city-detail .percent-bar::after {
+.city-detail .progress-bar::after {
     content: '';
     position: absolute;
     top: 0;
@@ -238,19 +238,19 @@ a {
     border-radius: 20px;
 }
 
-.city-detail .percent-bar[data-score='green']::after {
+.city-detail .progress-bar[data-score='green']::after {
     min-width: 10px;
     width: var(--score);
     background-color: var(--green);
 }
 
-.city-detail .percent-bar[data-score='yellow']::after {
+.city-detail .progress-bar[data-score='yellow']::after {
     min-width: 10px;
     width: var(--score);
     background-color: var(--yellow);
 }
 
-.city-detail .percent-bar[data-score='red']::after {
+.city-detail .progress-bar[data-score='red']::after {
     min-width: 10px;
     width: var(--score);
     background-color: var(--red);
@@ -266,7 +266,7 @@ a {
     .city-list {
         padding: 15px 5%;
     }
-    .city-detail .percentage {
+    .city-detail .progress-container {
         padding: 0 5%;
         width: 90%;
         padding-top: 60px;
@@ -309,7 +309,7 @@ a {
         font-size: var(--large);
     }
 
-    .city-detail .percentage {
+    .city-detail .progress-container {
         padding-top: 30px;
         padding-bottom: 30px;
     }
@@ -324,7 +324,7 @@ a {
         margin-bottom: 30px;
     }
 
-    .city-detail .percent-bar {
+    .city-detail .progress-bar {
         position: relative;
         flex: 1;
         height: 32px;
@@ -333,7 +333,7 @@ a {
         overflow: hidden;
     }
 
-    .city-detail .percent-bar::after {
+    .city-detail .progress-bar::after {
         content: '';
         position: absolute;
         top: 0;
@@ -342,19 +342,19 @@ a {
         border-radius: 20px;
     }
 
-    .city-detail .percent-bar[data-score='green']::after {
+    .city-detail .progress-bar[data-score='green']::after {
         min-width: 10px;
         width: var(--score);
         background-color: var(--green);
     }
 
-    .city-detail .percent-bar[data-score='yellow']::after {
+    .city-detail .progress-bar[data-score='yellow']::after {
         min-width: 10px;
         width: var(--score);
         background-color: var(--yellow);
     }
 
-    .city-detail .percent-bar[data-score='red']::after {
+    .city-detail .progress-bar[data-score='red']::after {
         min-width: 10px;
         width: var(--score);
         background-color: var(--red);

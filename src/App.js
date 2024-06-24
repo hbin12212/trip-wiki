@@ -24,10 +24,10 @@ export default function App($app) {
     this.state = {
         startIdx: 0,
         sortBy: getSortBy(),
-        currentPage: window.location.pathname,
         region: window.location.pathname.replace('/', ''),
         searchWord: getSearchWord(),
         cities: '',
+        currentPage: window.location.pathname,
     };
 
     const renderHeader = () => {

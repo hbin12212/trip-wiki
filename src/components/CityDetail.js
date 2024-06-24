@@ -1,4 +1,5 @@
 export default function CityDetail({ $app, initialState }) {
+    this.state = initialState;
     this.$target = document.createElement('div');
     this.$target.className = 'city-detail';
 
@@ -11,7 +12,7 @@ export default function CityDetail({ $app, initialState }) {
     };
 
     this.template = () => {
-        let cityData = initialState.cityDetail;
+        let cityData = this.state.cityDetail;
         let temp = ``;
         if (cityData) {
             temp = `<div class="image-banner">
@@ -22,46 +23,46 @@ export default function CityDetail({ $app, initialState }) {
                 </div>
                 
             </div>
-            <div class="percentage">
+            <div class="progress-container">
                     <div class="info-item">
                         <div class="label">⭐ Total Score</div>
-                        <div class="percent-bar" data-score="${getScoreClass(cityData.total)}" style="--score: ${
+                        <div class="progress-bar" data-score="${getScoreClass(cityData.total)}" style="--score: ${
                 cityData.total * 20
             }%"></div>
                     </div>
                     <div class="info-item">
                         <div class="label">💵 Cost</div>
-                        <div class="percent-bar" data-score="${getScoreClass(cityData.info.cost)}" style="--score: ${
+                        <div class="progress-bar" data-score="${getScoreClass(cityData.info.cost)}" style="--score: ${
                 cityData.info.cost * 20
             }%"></div>
                     </div>
                     <div class="info-item">
                         <div class="label">😆 Fun</div>
-                        <div class="percent-bar" data-score="${getScoreClass(cityData.info.fun)}" style="--score: ${
+                        <div class="progress-bar" data-score="${getScoreClass(cityData.info.fun)}" style="--score: ${
                 cityData.info.fun * 20
             }%"></div>
                     </div>
                     <div class="info-item">
                         <div class="label">🚓 Safety</div>
-                        <div class="percent-bar" data-score="${getScoreClass(cityData.info.safety)}" style="--score: ${
+                        <div class="progress-bar" data-score="${getScoreClass(cityData.info.safety)}" style="--score: ${
                 cityData.info.safety * 20
             }%"></div>
                     </div>
                     <div class="info-item">
                         <div class="label">🛜 Internet</div>
-                        <div class="percent-bar" data-score="${getScoreClass(
+                        <div class="progress-bar" data-score="${getScoreClass(
                             cityData.info.internet
                         )}" style="--score: ${cityData.info.internet * 20}%"></div>
                     </div>
                     <div class="info-item">
                         <div class="label">💨 Air Condition</div>
-                        <div class="percent-bar" data-score="${getScoreClass(cityData.info.air)}" style="--score: ${
+                        <div class="progress-bar" data-score="${getScoreClass(cityData.info.air)}" style="--score: ${
                 cityData.info.air * 20
             }%"></div>
                     </div>
                     <div class="info-item">
                         <div class="label">🍖 Food</div>
-                        <div class="percent-bar" data-score="${getScoreClass(cityData.info.food)}" style="--score: ${
+                        <div class="progress-bar" data-score="${getScoreClass(cityData.info.food)}" style="--score: ${
                 cityData.info.food * 20
             }%"></div>
                     </div>

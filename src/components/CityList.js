@@ -27,7 +27,7 @@ export default function CityList({ $app, initialState, handleItemClick, handleLo
 
     this.render = () => {
         this.$target.innerHTML = this.template();
-        this.$target.querySelectorAll('.city-item').forEach((elm) => {
+        this.$target.querySelectorAll('div.city-item').forEach((elm) => {
             elm.addEventListener('click', () => {
                 this.handleItemClick(elm.id);
             });
